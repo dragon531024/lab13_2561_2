@@ -10,9 +10,31 @@ void swap(T d[],int x,int y){
 }
 
 template <typename T>
+void show(T d[],int N,int M){
+	for(int i=0; i<N; i++){
+		if(i==M){
+			cout << "[" << d[M] << "]"<<" ";
+		}else{ cout << d[i]<<" ";
+		}
+	}
+}
+
+template <typename T>
 void insertionSort(T d[],int N){
-	
-//Write your code here.
+	int i;
+	for(int j=1; j<N; j++){
+		show(d,N,j);
+		cout << "==>";
+		for(i=j; i>0; i--){
+			if(d[i]>d[i-1]){
+			swap(d,i,i-1);
+			}else{
+			break;
+			}
+		}
+		show(d,N,i);
+		cout << endl;
+	}
 
 }
 
